@@ -14,8 +14,7 @@ module.exports = class BinarySearchTree {
   }
 
   root() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this.rule;
   }
 
   add(data) {
@@ -76,7 +75,7 @@ module.exports = class BinarySearchTree {
 
     }
 
-    if(!found) return undefined;
+    if(!found) return null;
     return found
 
   }
