@@ -51,9 +51,9 @@ module.exports = class BinarySearchTree {
         return true;
       }
 
-      return data<node.data ?
+      return data < node.data ?
           searchWithin(node.left, data):
-          searchWithin(node.left, data);
+          searchWithin(node.right, data);
 
 
     }
@@ -86,12 +86,12 @@ module.exports = class BinarySearchTree {
     function removeNode(node, data){
       if (!node){
         return null;
-    }
+      }
 
-      if (data<node.data){
+      if (data < node.data){
         node.left=removeNode(node.left, data);
         return node
-      } else if (data<node.data){
+      } else if (node.data<data){
         node.right=removeNode(node.right, data);
         return node
       } else {
