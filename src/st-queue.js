@@ -1,4 +1,5 @@
 const { NotImplementedError } = require('../extensions/index.js');
+const {ListNode} = require('../extensions');
 
 // const { ListNode } = require('../extensions/list-node.js');
 
@@ -18,11 +19,20 @@ module.exports = class Queue {
   constructor()
   {
     this.elements = [];
+
   }
 
   getUnderlyingList() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    let list= new ListNode(this.elements[0]);
+
+    let selectedNode = list;
+
+    for (let i=1; i<this.elements.length; i++){
+      selectedNode.next= new ListNode(this.elements[i]);
+      selectedNode=selectedNode.next;
+    }
+
+    return list
   }
 
   enqueue(value) {
