@@ -23,26 +23,3 @@ module.exports = function removeKFromList(/* l, k */) {
   throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
-
-function check {
-if (l == null){
-  return l;
-}
-while(l.value == k && l != null){
-  l = l.next;
-  if (l == null)
-    break;
-}
-if (l == null){
-  return l;
-}
-ListNode c = l;
-while(c.next != null){
-  if ((int)(c.next.value) == k){
-    c.next = c.next.next;
-  }else{
-    c=c.next;
-  }
-}
-return l;
-}
